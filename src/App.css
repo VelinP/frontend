@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+#mainarea{
+  resize: none;
+}
+
+.submitdiv{
+  display: flex;
+  align-items: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
