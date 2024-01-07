@@ -12,9 +12,11 @@ const pool = mysql.createPool({
 
 
 export const getRows = async() =>{
-    const [items] = await pool.query("SELECT * FROM items");
-    return items;
+    const items = await pool.query("SELECT * FROM items");
+    console.log(items[0])
+    console.log(typeof(items))
+    //return items[0];
 }
 
-const info = await getRows()
-console.log(info)
+//const info = await getRows()
+getRows()
