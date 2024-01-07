@@ -1,12 +1,18 @@
 import { useEffect , useState } from "react"
-import {getRows} from '../db/database'
+import * as requester from '../util/requester'
+
 export const Submit = () =>{
-    
+    const [items,setitems] = useState([])
+   
+    useEffect(()=> {requester.get("http://localhost:4000/").then((data) => {setitems(data)})},[])
+
+
     const logger = (event:any):void =>{
         event.preventDefault()
         const { description } = Object.fromEntries(new FormData(event.target));
         console.log(Object.fromEntries(new FormData(event.target)))
         console.log(description)
+        console.log(items)
     }
     
 
