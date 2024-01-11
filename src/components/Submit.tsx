@@ -4,7 +4,7 @@ import * as requester from '../util/requester'
 export const Submit = () =>{
     const [items,setitems] = useState([])
    
-    useEffect(()=> {requester.get("http://localhost:4000/").then((data) => {setitems(data)})},[])
+    //useEffect(()=> {requester.get("http://localhost:4000/").then((data) => {setitems(data)})},[])
 
 
     const logger = (event:any):void =>{
@@ -12,7 +12,7 @@ export const Submit = () =>{
         const { title , info , username } = Object.fromEntries(new FormData(event.target));
         console.log(Object.fromEntries(new FormData(event.target)))
         console.log(title , info , username)
-        console.log(items)
+        requester.post("http://localhost:4000/post", {title,info,username})
     }
     
 
