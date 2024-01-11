@@ -1,6 +1,3 @@
-interface data{
-    xd:string,
-}
 
 export const get = async (url:string) =>{
     try{
@@ -11,5 +8,15 @@ export const get = async (url:string) =>{
 
     }catch(e){
         console.log("Server is probably offline")
+    }
+}
+
+export const post = async(url:string,data:Object ) =>{
+    try{
+        const readydata = await fetch(url, {method:'POST', headers:{'Content-Type': "application/json"}, body: JSON.stringify(data)})
+        return readydata.json()
+    }
+    catch(e:any){
+        console.log(e.message)
     }
 }

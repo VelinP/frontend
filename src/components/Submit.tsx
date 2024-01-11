@@ -9,9 +9,9 @@ export const Submit = () =>{
 
     const logger = (event:any):void =>{
         event.preventDefault()
-        const { description } = Object.fromEntries(new FormData(event.target));
+        const { title , info , username } = Object.fromEntries(new FormData(event.target));
         console.log(Object.fromEntries(new FormData(event.target)))
-        console.log(description)
+        console.log(title , info , username)
         console.log(items)
     }
     
@@ -22,8 +22,10 @@ export const Submit = () =>{
             <form id="create" onSubmit={logger}>
                 <button>Submit</button>
 
-                <textarea name="description" id="description" placeholder="Describe your offer...">
-            </textarea>
+                <textarea name="title" id="description" placeholder="Title"></textarea>
+                <textarea name="info" id="description" placeholder="Info"></textarea>
+                <textarea name="username" id="description" placeholder="Username"></textarea>
+
 
         </form>
 
