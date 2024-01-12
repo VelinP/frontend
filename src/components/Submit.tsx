@@ -1,18 +1,22 @@
 import { useEffect , useState } from "react"
 import * as requester from '../util/requester'
+import { FC } from "react"
 
-export const Submit = () =>{
-    const [items,setitems] = useState([])
-   
+export const Submit:FC = () =>{
+    //const [items,setitems] = useState([])
     //useEffect(()=> {requester.get("http://localhost:4000/").then((data) => {setitems(data)})},[])
-
+    
+    interface info{
+        title:string | File,
+        info:string | File,
+        username:string | File
+    }
 
     const logger = (event:any):void =>{
         event.preventDefault()
         const { title , info , username } = Object.fromEntries(new FormData(event.target));
-        console.log(Object.fromEntries(new FormData(event.target)))
-        console.log(title , info , username)
-        requester.post("http://localhost:4000/post", {title,info,username})
+        const data:info = {title,info,username};
+        requester.post("http://localhost:4000/post", data)
     }
     
 
