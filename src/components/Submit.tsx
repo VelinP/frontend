@@ -7,15 +7,15 @@ export const Submit:FC = () =>{
     //useEffect(()=> {requester.get("http://localhost:4000/").then((data) => {setitems(data)})},[])
     
     interface InfoInterface{
-        title:string | File,
-        info:string | File,
-        username:string | File
+        username:string | File,
+        password:string | File,
+        email:string | File
     }
 
     const logger = (event:any):void =>{
         event.preventDefault()
-        const { title , info , username } = Object.fromEntries(new FormData(event.target));
-        const data:InfoInterface = {title,info,username};
+        const { username , password , email } = Object.fromEntries(new FormData(event.target));
+        const data:InfoInterface = {username,password,email};
         console.log(data)
         requester.post("http://localhost:4000/post", data)
     }
@@ -26,9 +26,9 @@ export const Submit:FC = () =>{
         
             <form id="create" onSubmit={logger}>
 
-                <input name="title" id="description" placeholder="Title"></input>
-                <input name="info" id="description" placeholder="Info"></input>
-                <input name="username" id="description" placeholder="Username"></input>
+                <input name="username" id="description" placeholder="username"></input>
+                <input name="password" id="description" placeholder="password"></input>
+                <input name="email" id="description" placeholder="email"></input>
 
                 <button>Submit</button>
 
