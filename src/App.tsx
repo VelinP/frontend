@@ -1,12 +1,19 @@
 import './App.css';
-import { Submit } from './components/Submit';
+import { Register } from './components/Register';
 import { Navbar } from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
         <Navbar/>
-        <Submit/>
+
+        <main className='main'>
+        <Routes>
+            <Route path="/register" element={<Register/>}/>
+
+        </Routes>
+        </main>
       
     </div>
   );

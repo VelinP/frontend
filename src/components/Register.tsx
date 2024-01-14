@@ -2,7 +2,7 @@ import { useEffect , useState } from "react"
 import * as requester from '../util/requester'
 import { FC } from "react"
 
-export const Submit:FC = () =>{
+export const Register:FC = () =>{
     //const [items,setitems] = useState([])
     //useEffect(()=> {requester.get("http://localhost:4000/").then((data) => {setitems(data)})},[])
     
@@ -23,18 +23,16 @@ export const Submit:FC = () =>{
 
     return(
         <div className="submitdiv">
-        
-            <form id="create" onSubmit={logger}>
+            <div className="submitholderdiv">
+            <h1>Please enter your data</h1>
 
+                <form id="create" onSubmit={logger}>
                 <input name="username" id="description" placeholder="username"></input>
                 <input name="password" id="description" placeholder="password"></input>
                 <input name="email" id="description" placeholder="email"></input>
-
                 <button>Submit</button>
-
-
-
-        </form>
+                </form>
+            </div>
 
         </div>
         

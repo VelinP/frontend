@@ -2,6 +2,14 @@
  
 }
 
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 .App {
   text-align: center;
 }
@@ -26,11 +34,10 @@
 }
 
 .mainul a:hover{
-  box-shadow: 2px 2px 2px 2px #07245f;
-  background-color: orange;
+  /* box-shadow: 2px 2px 2px 2px #07245f; */
   transition: 0.3s;
-  border-radius: 10px;
-  padding: 10px;
+  
+  color:black
 
 }
 
@@ -44,22 +51,43 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 .submitdiv{
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: rgb(158, 126, 126);
+  background: url(./images/image1_0.jpg);
+  background-size: cover;
+  width: 60%;
+  margin-top: 10%;
+  border-radius: 10px;
+  object-fit: cover;
+ 
+  overflow: hidden; 
 }
 
+.submitholderdiv{
+  padding: 20px;
+}
 
-
-.submitdiv form{
+.submitholderdiv form{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 10px;
+  
+  
 }
