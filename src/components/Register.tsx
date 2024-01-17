@@ -16,7 +16,6 @@ export const Register:FC = () =>{
         event.preventDefault()
         const { username , password , email } = Object.fromEntries(new FormData(event.target));
         const data:InfoInterface = {username,password,email};
-        console.log(data)
         requester.post("http://localhost:4000/post", data)
     }
     
