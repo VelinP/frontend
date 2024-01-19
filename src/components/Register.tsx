@@ -3,6 +3,9 @@ import * as requester from '../util/requester'
 import { FC } from "react"
 
 export const Register:FC = () =>{
+    //const [items,setitems] = useState([])
+    //useEffect(()=> {requester.get("http://localhost:4000/").then((data) => {setitems(data)})},[])
+    
     interface InfoInterface{
         username:string | File,
         password:string | File,
