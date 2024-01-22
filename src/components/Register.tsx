@@ -1,4 +1,3 @@
-import { useEffect , useState } from "react"
 import * as requester from '../util/requester'
 import { FC } from "react"
 
