@@ -13,7 +13,7 @@ export const Login:FC = () =>{
         event.preventDefault()
         const { password , email } = Object.fromEntries(new FormData(event.target));
         const data:InfoInterface = {password,email};
-        //auth.login("http://localhost:4000/post", data)
+        auth.login("http://localhost:4000/login", data)
     }
     
 
